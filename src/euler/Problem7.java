@@ -1,4 +1,6 @@
 package euler;
+
+import euler.util.Primes;
 /*
 	+-----------------------------------+
 	|	10001st Prime					|
@@ -37,16 +39,6 @@ package euler;
 
 public class Problem7 {
 
-	// determines if a given n is prime or not
-	public static boolean isPrime(int n) {
-		if (n < 2) return false;
-		if (n == 2) return true;
-		for (int i = 2; i < 1 + Math.pow(n, 0.5); i++) {
-			if (n % i == 0) return false;
-		}
-		return true;
-	}
-
 	// finds the n-th prime number
 	public static int findPrime(int n) {
 		int numPrimes = 1; // start at 2
@@ -54,7 +46,7 @@ public class Problem7 {
 
 		while (numPrimes < n) {
 			prime++; // a truly robust solution would check for overflow and throw an exception for very large n
-			if (isPrime(prime))
+			if (Primes.isPrime(prime))
 				numPrimes++;
 		}
 		return prime;
