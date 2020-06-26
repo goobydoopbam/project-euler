@@ -39,8 +39,10 @@ public class Problem9 {
 		for (int a = 1; a < n / 3; a++) {
 			for (int b = a + 1; b < n - b - a; b++) {
 				int c = n - b - a;
-				if (a * a + b * b == c * c) // if this satisfies the Pythagorean
+				if (a * a + b * b == c * c) { // if this satisfies the Pythagorean
+					System.out.println("A: " + a + " B: " + b + " C: " + c);
 					return a * b * c;
+				}
 			}
 		}
 		return -1; // signifies that no Pythagorean triple for this sum exists
